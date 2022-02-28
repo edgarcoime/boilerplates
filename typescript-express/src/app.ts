@@ -18,11 +18,11 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Hello world api! :)"
+    message: "Hello world api! :)",
   });
 });
 
@@ -37,4 +37,4 @@ app.listen(port, () => {
   /* eslint-disable no-console */
   console.log(`Listening: http://localhost:${port}`);
   /* eslint-enable no-console */
-})
+});
