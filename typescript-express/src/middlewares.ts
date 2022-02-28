@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, ErrorRequestHandler } from "express"
+import { Request, Response, NextFunction, ErrorRequestHandler } from "express";
 
 export function notFound(req: Request, res: Response, next: NextFunction) {
   res.status(404);
@@ -6,13 +6,12 @@ export function notFound(req: Request, res: Response, next: NextFunction) {
   next(error);
 }
 
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
-  /* eslint-enable no-unused-vars */
   const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
   res.status(statusCode);
   res.json({
     message: err.message,
-    stack: process.env.NODE_ENV === "production" ? "🥞" : err.stack
+    stack: process.env.NODE_ENV === "production" ? "🥞" : err.stack,
   });
 }
