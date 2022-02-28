@@ -22,7 +22,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Hello world api! :)",
+    message: "Hello world api!",
   });
 });
 
